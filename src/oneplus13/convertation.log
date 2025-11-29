@@ -1,0 +1,380 @@
+[user@archlinux oneplus13]$ adb devices
+* daemon not running; starting now at tcp:[port]
+* daemon started successfully
+List of devices attached
+[____sn_here_____]        unauthorized
+
+[leoikt@archlinux oneplus13]$ adb devices
+List of devices attached
+[____sn_here_____]        device
+
+[leoikt@archlinux oneplus13]$ adb reboot bootloader
+[user@archlinux oneplus13]$ fastboot devices
+[____sn_here_____]         fastboot
+[user@archlinux oneplus13]$  fastboot reboot fastboot
+Rebooting into fastboot                            OKAY [  0.002s]
+< waiting for any device >
+Finished. Total time: 25.898s
+[user@archlinux oneplus13]$ fastboot devices
+[____sn_here_____]         fastbootd
+[user@archlinux oneplus13]$  fastboot reboot bootloader
+Rebooting into bootloader                          OKAY [  0.000s]
+Finished. Total time: 0.050s
+[user@archlinux oneplus13]$ fastboot devices
+[____sn_here_____]         fastboot
+[user@archlinux oneplus13]$  fastboot flashing unlock
+OKAY [  0.020s]
+Finished. Total time: 0.020s
+[user@archlinux oneplus13]$ cd /home/user/Downloads/
+[user@archlinux Downloads]$ unzip "SuperHybrid Flasher Global 16.0.1.304.zip"
+Archive:  SuperHybrid Flasher Global 16.0.1.304.zip
+   creating: COS_FILES_HERE/
+  inflating: COS_FILES_HERE/my_region.img  
+  inflating: COS_FILES_HERE/oplusstanvbk.img  
+   creating: META-INF/
+   creating: META-INF/com/
+   creating: META-INF/com/google/
+   creating: META-INF/com/google/android/
+   creating: META-INF/com/google/android/helpers/
+  inflating: META-INF/com/google/android/helpers/pack_super  
+  inflating: META-INF/com/google/android/helpers/unpack_super  
+  inflating: META-INF/com/google/android/helpers/volprompt  
+  inflating: META-INF/com/google/android/update-binary  
+  inflating: META-INF/com/google/android/updater-script  
+   creating: OOS_FILES_HERE/
+  inflating: OOS_FILES_HERE/abl.img  
+  inflating: OOS_FILES_HERE/aop.img  
+  inflating: OOS_FILES_HERE/aop_config.img  
+  inflating: OOS_FILES_HERE/bluetooth.img  
+  inflating: OOS_FILES_HERE/boot.img  
+  inflating: OOS_FILES_HERE/cpucp.img  
+  inflating: OOS_FILES_HERE/cpucp_dtb.img  
+  inflating: OOS_FILES_HERE/devcfg.img  
+  inflating: OOS_FILES_HERE/dsp.img  
+  inflating: OOS_FILES_HERE/dtbo.img  
+  inflating: OOS_FILES_HERE/engineering_cdt.img  
+  inflating: OOS_FILES_HERE/featenabler.img  
+  inflating: OOS_FILES_HERE/hyp.img  
+  inflating: OOS_FILES_HERE/imagefv.img  
+  inflating: OOS_FILES_HERE/init_boot.img  
+  inflating: OOS_FILES_HERE/keymaster.img  
+  inflating: OOS_FILES_HERE/modem.img  
+  inflating: OOS_FILES_HERE/oplus_sec.img  
+  inflating: OOS_FILES_HERE/oplusstanvbk.img  
+  inflating: OOS_FILES_HERE/pdp.img  
+  inflating: OOS_FILES_HERE/pdp_cdb.img  
+  inflating: OOS_FILES_HERE/pvmfw.img  
+  inflating: OOS_FILES_HERE/qupfw.img  
+  inflating: OOS_FILES_HERE/recovery.img  
+  inflating: OOS_FILES_HERE/shrm.img  
+  inflating: OOS_FILES_HERE/soccp_dcd.img  
+  inflating: OOS_FILES_HERE/soccp_debug.img  
+  inflating: OOS_FILES_HERE/splash.img  
+  inflating: OOS_FILES_HERE/spuservice.img  
+  inflating: OOS_FILES_HERE/tz.img   
+  inflating: OOS_FILES_HERE/uefi.img  
+  inflating: OOS_FILES_HERE/uefisecapp.img  
+  inflating: OOS_FILES_HERE/vbmeta.img  
+  inflating: OOS_FILES_HERE/vbmeta_system.img  
+  inflating: OOS_FILES_HERE/vbmeta_vendor.img  
+  inflating: OOS_FILES_HERE/vendor_boot.img  
+  inflating: OOS_FILES_HERE/xbl.img  
+  inflating: OOS_FILES_HERE/xbl_config.img  
+  inflating: OOS_FILES_HERE/xbl_ramdump.img  
+   creating: Platform-Tools/
+  inflating: Platform-Tools/AdbWinApi.dll  
+  inflating: Platform-Tools/AdbWinUsbApi.dll  
+  inflating: Platform-Tools/NOTICE.txt  
+  inflating: Platform-Tools/adb.exe  
+  inflating: Platform-Tools/etc1tool.exe  
+  inflating: Platform-Tools/fastboot.exe  
+  inflating: Platform-Tools/hprof-conv.exe  
+  inflating: Platform-Tools/libwinpthread-1.dll  
+  inflating: Platform-Tools/make_f2fs.exe  
+  inflating: Platform-Tools/make_f2fs_casefold.exe  
+  inflating: Platform-Tools/mke2fs.conf  
+  inflating: Platform-Tools/mke2fs.exe  
+ extracting: Platform-Tools/source.properties  
+  inflating: Platform-Tools/sqlite3.exe  
+  inflating: Super_Flasher.bat       
+  inflating: super.img               
+[user@archlinux Downloads]$ ls
+ COS_FILES_HERE   OOS_FILES_HERE  'SuperHybrid Flasher Global 16.0.1.304.zip'   flasher         super.img
+ META-INF         Platform-Tools   Super_Flasher.bat                            oldflasher.sh
+[user@archlinux Downloads]$ adb reboot bootloader
+error: no devices/emulators found
+[user@archlinux Downloads]$ adb devices
+List of devices attached
+
+[leoikt@archlinux Downloads]$ adb devices
+List of devices attached
+[____sn_here_____]        device
+
+[user@archlinux Downloads]$ adb reboot bootloader
+[user@archlinux Downloads]$ ls
+ COS_FILES_HERE   OOS_FILES_HERE  'SuperHybrid Flasher Global 16.0.1.304.zip'   flasher         super.img
+ META-INF         Platform-Tools   Super_Flasher.bat                            oldflasher.sh
+[user@archlinux Downloads]$ ./flasher 
+**********************************************************************
+
+                Oneplus 13 - OOS Super Flasher
+           Packaged by docnok63, Jonas Salo & Daniel
+         script inspired by FTH PHONE 1902 and Venkayy
+         GNU/Linux script porting & testing by leoikt
+************************      START FLASH     ************************
+Setting current slot to 'a'                        OKAY [  0.006s]
+Finished. Total time: 0.032s
+Прошиваем основные образы...
+Sending 'boot_a' (98304 KB)                        OKAY [  3.008s]
+Writing 'boot_a'                                   OKAY [  0.024s]
+Finished. Total time: 3.226s
+Sending 'dtbo' (24576 KB)                          OKAY [  0.753s]
+Writing 'dtbo'                                     OKAY [  0.007s]
+Finished. Total time: 0.897s
+Sending 'init_boot' (8192 KB)                      OKAY [  0.253s]
+Writing 'init_boot'                                OKAY [  0.003s]
+Finished. Total time: 0.383s
+Sending 'modem_a' (241788 KB)                      OKAY [  7.389s]
+Writing 'modem_a'                                  OKAY [  0.075s]
+Finished. Total time: 7.710s
+Sending 'recovery' (102400 KB)                     OKAY [  3.133s]
+Writing 'recovery'                                 OKAY [  0.025s]
+Finished. Total time: 3.296s
+Sending 'vbmeta' (12 KB)                           OKAY [  0.003s]
+Writing 'vbmeta'                                   OKAY [  0.001s]
+Finished. Total time: 0.141s
+Sending 'vbmeta_system' (4 KB)                     OKAY [  0.002s]
+Writing 'vbmeta_system'                            OKAY [  0.001s]
+Finished. Total time: 0.142s
+Sending 'vbmeta_vendor' (4 KB)                     OKAY [  0.002s]
+Writing 'vbmeta_vendor'                            OKAY [  0.001s]
+Finished. Total time: 0.142s
+Sending 'vendor_boot' (98304 KB)                   OKAY [  3.010s]
+Writing 'vendor_boot'                              OKAY [  0.024s]
+Finished. Total time: 3.171s
+Sending sparse 'super' 1/13 (786428 KB)            OKAY [ 24.043s]
+Writing 'super'                                    OKAY [  0.017s]
+Sending sparse 'super' 2/13 (786428 KB)            OKAY [ 24.057s]
+Writing 'super'                                    OKAY [  0.050s]
+Sending sparse 'super' 3/13 (786428 KB)            OKAY [ 23.949s]
+Writing 'super'                                    OKAY [  0.004s]
+Sending sparse 'super' 4/13 (786428 KB)            OKAY [ 24.052s]
+Writing 'super'                                    OKAY [  0.005s]
+Sending sparse 'super' 5/13 (786428 KB)            OKAY [ 24.162s]
+Writing 'super'                                    OKAY [  0.004s]
+Sending sparse 'super' 6/13 (786428 KB)            OKAY [ 23.842s]
+Writing 'super'                                    OKAY [  0.005s]
+Sending sparse 'super' 7/13 (786428 KB)            OKAY [ 23.882s]
+Writing 'super'                                    OKAY [  0.005s]
+Sending sparse 'super' 8/13 (786428 KB)            OKAY [ 23.979s]
+Writing 'super'                                    OKAY [  0.019s]
+Sending sparse 'super' 9/13 (776312 KB)            OKAY [ 23.695s]
+Writing 'super'                                    OKAY [  0.005s]
+Sending sparse 'super' 10/13 (786428 KB)           OKAY [ 24.071s]
+Writing 'super'                                    OKAY [  0.016s]
+Sending sparse 'super' 11/13 (786428 KB)           OKAY [ 23.959s]
+Writing 'super'                                    OKAY [  0.048s]
+Sending sparse 'super' 12/13 (786428 KB)           OKAY [ 24.071s]
+Writing 'super'                                    OKAY [  0.006s]
+Sending sparse 'super' 13/13 (438608 KB)           OKAY [ 13.440s]
+Writing 'super'                                    OKAY [  0.014s]
+Finished. Total time: 301.494s
+*******************      REBOOTING TO FASTBOOTD     *******************
+#################################
+# Выберите English на телефоне  #
+#################################
+Rebooting into fastboot                            OKAY [  0.003s]
+< waiting for any device >
+Finished. Total time: 22.049s
+Нажмите любую клавишу для продолжения...Прошиваем дополнительные образы...
+Прошиваем abl...
+Sending 'abl_a' (272 KB)                           OKAY [  0.009s]
+Writing 'abl_a'                                    OKAY [  0.002s]
+Sending 'abl_b' (272 KB)                           OKAY [  0.009s]
+Writing 'abl_b'                                    OKAY [  0.001s]
+Finished. Total time: 0.040s
+Прошиваем aop...
+Sending 'aop_a' (364 KB)                           OKAY [  0.012s]
+Writing 'aop_a'                                    OKAY [  0.001s]
+Sending 'aop_b' (364 KB)                           OKAY [  0.012s]
+Writing 'aop_b'                                    OKAY [  0.001s]
+Finished. Total time: 0.031s
+Прошиваем aop_config...
+Sending 'aop_config_a' (32 KB)                     OKAY [  0.001s]
+Writing 'aop_config_a'                             OKAY [  0.001s]
+Sending 'aop_config_b' (32 KB)                     OKAY [  0.001s]
+Writing 'aop_config_b'                             OKAY [  0.001s]
+Finished. Total time: 0.007s
+Прошиваем bluetooth...
+Sending 'bluetooth_a' (5372 KB)                    OKAY [  0.168s]
+Writing 'bluetooth_a'                              OKAY [  0.004s]
+Sending 'bluetooth_b' (5372 KB)                    OKAY [  0.168s]
+Writing 'bluetooth_b'                              OKAY [  0.004s]
+Finished. Total time: 0.354s
+Прошиваем cpucp...
+Sending 'cpucp_a' (312 KB)                         OKAY [  0.010s]
+Writing 'cpucp_a'                                  OKAY [  0.001s]
+Sending 'cpucp_b' (312 KB)                         OKAY [  0.010s]
+Writing 'cpucp_b'                                  OKAY [  0.001s]
+Finished. Total time: 0.039s
+Прошиваем cpucp_dtb...
+Sending 'cpucp_dtb_a' (16 KB)                      OKAY [  0.001s]
+Writing 'cpucp_dtb_a'                              OKAY [  0.001s]
+Sending 'cpucp_dtb_b' (16 KB)                      OKAY [  0.001s]
+Writing 'cpucp_dtb_b'                              OKAY [  0.001s]
+Finished. Total time: 0.007s
+Прошиваем devcfg...
+Sending 'devcfg_a' (60 KB)                         OKAY [  0.002s]
+Writing 'devcfg_a'                                 OKAY [  0.001s]
+Sending 'devcfg_b' (60 KB)                         OKAY [  0.002s]
+Writing 'devcfg_b'                                 OKAY [  0.001s]
+Finished. Total time: 0.009s
+Прошиваем dsp...
+Sending 'dsp_a' (65536 KB)                         OKAY [  2.033s]
+Writing 'dsp_a'                                    OKAY [  0.024s]
+Sending 'dsp_b' (65536 KB)                         OKAY [  2.033s]
+Writing 'dsp_b'                                    OKAY [  0.024s]
+Finished. Total time: 4.117s
+Прошиваем engineering_cdt...
+Sending 'engineering_cdt_a' (1024 KB)              OKAY [  0.033s]
+Writing 'engineering_cdt_a'                        OKAY [  0.002s]
+Sending 'engineering_cdt_b' (1024 KB)              OKAY [  0.032s]
+Writing 'engineering_cdt_b'                        OKAY [  0.002s]
+Finished. Total time: 0.116s
+Прошиваем featenabler...
+Sending 'featenabler_a' (104 KB)                   OKAY [  0.004s]
+Writing 'featenabler_a'                            OKAY [  0.001s]
+Sending 'featenabler_b' (104 KB)                   OKAY [  0.004s]
+Writing 'featenabler_b'                            OKAY [  0.002s]
+Finished. Total time: 0.014s
+Прошиваем hyp...
+Sending 'hyp_a' (1704 KB)                          OKAY [  0.054s]
+Writing 'hyp_a'                                    OKAY [  0.003s]
+Sending 'hyp_b' (1704 KB)                          OKAY [  0.053s]
+Writing 'hyp_b'                                    OKAY [  0.003s]
+Finished. Total time: 0.120s
+Прошиваем imagefv...
+Sending 'imagefv_a' (112 KB)                       OKAY [  0.004s]
+Writing 'imagefv_a'                                OKAY [  0.001s]
+Sending 'imagefv_b' (112 KB)                       OKAY [  0.004s]
+Writing 'imagefv_b'                                OKAY [  0.001s]
+Finished. Total time: 0.025s
+Прошиваем keymaster...
+Sending 'keymaster_a' (448 KB)                     OKAY [  0.015s]
+Writing 'keymaster_a'                              OKAY [  0.001s]
+Sending 'keymaster_b' (448 KB)                     OKAY [  0.014s]
+Writing 'keymaster_b'                              OKAY [  0.001s]
+Finished. Total time: 0.038s
+Прошиваем oplus_sec...
+Sending 'oplus_sec_a' (968 KB)                     OKAY [  0.031s]
+Writing 'oplus_sec_a'                              OKAY [  0.002s]
+Sending 'oplus_sec_b' (968 KB)                     OKAY [  0.031s]
+Writing 'oplus_sec_b'                              OKAY [  0.002s]
+Finished. Total time: 0.072s
+Прошиваем oplusstanvbk...
+Sending 'oplusstanvbk_a' (3640 KB)                 OKAY [  0.113s]
+Writing 'oplusstanvbk_a'                           OKAY [  0.003s]
+Sending 'oplusstanvbk_b' (3640 KB)                 OKAY [  0.113s]
+Writing 'oplusstanvbk_b'                           OKAY [  0.004s]
+Finished. Total time: 0.244s
+Прошиваем pdp...
+Sending 'pdp_a' (208 KB)                           OKAY [  0.007s]
+Writing 'pdp_a'                                    OKAY [  0.001s]
+Sending 'pdp_b' (208 KB)                           OKAY [  0.007s]
+Writing 'pdp_b'                                    OKAY [  0.001s]
+Finished. Total time: 0.031s
+Прошиваем pdp_cdb...
+Sending 'pdp_cdb_a' (16 KB)                        OKAY [  0.001s]
+Writing 'pdp_cdb_a'                                OKAY [  0.001s]
+Sending 'pdp_cdb_b' (16 KB)                        OKAY [  0.001s]
+Writing 'pdp_cdb_b'                                OKAY [  0.001s]
+Finished. Total time: 0.007s
+Прошиваем pvmfw...
+Sending 'pvmfw_a' (1024 KB)                        OKAY [  0.032s]
+Writing 'pvmfw_a'                                  OKAY [  0.002s]
+Sending 'pvmfw_b' (1024 KB)                        OKAY [  0.032s]
+Writing 'pvmfw_b'                                  OKAY [  0.002s]
+Finished. Total time: 0.074s
+Прошиваем qupfw...
+Sending 'qupfw_a' (64 KB)                          OKAY [  0.002s]
+Writing 'qupfw_a'                                  OKAY [  0.001s]
+Sending 'qupfw_b' (64 KB)                          OKAY [  0.002s]
+Writing 'qupfw_b'                                  OKAY [  0.001s]
+Finished. Total time: 0.010s
+Прошиваем shrm...
+Sending 'shrm_a' (148 KB)                          OKAY [  0.005s]
+Writing 'shrm_a'                                   OKAY [  0.001s]
+Sending 'shrm_b' (148 KB)                          OKAY [  0.005s]
+Writing 'shrm_b'                                   OKAY [  0.001s]
+Finished. Total time: 0.015s
+Прошиваем soccp_dcd...
+Sending 'soccp_dcd_a' (20 KB)                      OKAY [  0.001s]
+Writing 'soccp_dcd_a'                              OKAY [  0.001s]
+Sending 'soccp_dcd_b' (20 KB)                      OKAY [  0.001s]
+Writing 'soccp_dcd_b'                              OKAY [  0.001s]
+Finished. Total time: 0.007s
+Прошиваем soccp_debug...
+Sending 'soccp_debug_a' (144 KB)                   OKAY [  0.005s]
+Writing 'soccp_debug_a'                            OKAY [  0.001s]
+Sending 'soccp_debug_b' (144 KB)                   OKAY [  0.005s]
+Writing 'soccp_debug_b'                            OKAY [  0.001s]
+Finished. Total time: 0.015s
+Прошиваем splash...
+Sending 'splash_a' (14720 KB)                      OKAY [  0.455s]
+Writing 'splash_a'                                 OKAY [  0.007s]
+Sending 'splash_b' (14720 KB)                      OKAY [  0.458s]
+Writing 'splash_b'                                 OKAY [  0.007s]
+Finished. Total time: 0.945s
+Прошиваем spuservice...
+Sending 'spuservice_a' (92 KB)                     OKAY [  0.003s]
+Writing 'spuservice_a'                             OKAY [  0.001s]
+Sending 'spuservice_b' (92 KB)                     OKAY [  0.003s]
+Writing 'spuservice_b'                             OKAY [  0.002s]
+Finished. Total time: 0.023s
+Прошиваем tz...
+Sending 'tz_a' (4076 KB)                           OKAY [  0.127s]
+Writing 'tz_a'                                     OKAY [  0.003s]
+Sending 'tz_b' (4076 KB)                           OKAY [  0.128s]
+Writing 'tz_b'                                     OKAY [  0.007s]
+Finished. Total time: 0.275s
+Прошиваем uefi...
+Sending 'uefi_a' (2732 KB)                         OKAY [  0.086s]
+Writing 'uefi_a'                                   OKAY [  0.003s]
+Sending 'uefi_b' (2732 KB)                         OKAY [  0.086s]
+Writing 'uefi_b'                                   OKAY [  0.003s]
+Finished. Total time: 0.199s
+Прошиваем uefisecapp...
+Sending 'uefisecapp_a' (200 KB)                    OKAY [  0.007s]
+Writing 'uefisecapp_a'                             OKAY [  0.001s]
+Sending 'uefisecapp_b' (200 KB)                    OKAY [  0.007s]
+Writing 'uefisecapp_b'                             OKAY [  0.001s]
+Finished. Total time: 0.033s
+Прошиваем xbl...
+Sending 'xbl_a' (1164 KB)                          OKAY [  0.037s]
+Writing 'xbl_a'                                    OKAY [  0.005s]
+Sending 'xbl_b' (1164 KB)                          OKAY [  0.037s]
+Writing 'xbl_b'                                    OKAY [  0.004s]
+Finished. Total time: 0.089s
+Прошиваем xbl_config...
+Sending 'xbl_config_a' (352 KB)                    OKAY [  0.012s]
+Writing 'xbl_config_a'                             OKAY [  0.002s]
+Sending 'xbl_config_b' (352 KB)                    OKAY [  0.011s]
+Writing 'xbl_config_b'                             OKAY [  0.002s]
+Finished. Total time: 0.032s
+Прошиваем xbl_ramdump...
+Sending 'xbl_ramdump_a' (864 KB)                   OKAY [  0.028s]
+Writing 'xbl_ramdump_a'                            OKAY [  0.001s]
+Sending 'xbl_ramdump_b' (864 KB)                   OKAY [  0.027s]
+Writing 'xbl_ramdump_b'                            OKAY [  0.001s]
+Finished. Total time: 0.064s
+super.img найден. Пропускаем создание логических разделов...
+********************** CHECK ABOVE FOR ERRORS **************************
+************** IF ERRORS, DO NOT BOOT INTO SYSTEM **********************
+Are you going to root your OP13? (y/n): y
+*****         !!!!Flashing NO files for signal!!!!           *****
+*****     !!!!Root-Module will be needed for signal!!!!      *****
+Are you flashing from ColorOS or Want to WIPE DATA?? (y/n): y
+****************** FLASHING COMPLETE *****************
+Wipe data by tapping Format Data on the screen, enter the code, and press format data.
+Phone will automatically reboot into Android after wipe is done.
+$

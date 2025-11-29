@@ -1,5 +1,5 @@
 #!/bin/bash
-# v.0.02
+# v.0.03
 
 # Функция для обработки ошибок
 handle_error() {
@@ -14,10 +14,10 @@ set -e
 title="OOS Super Flasher"
 echo "**********************************************************************"
 echo ""
-echo "                Oneplus 13 - OOS Super Flasher"
-echo "           Packaged by docnok63, Jonas Salo & Daniel"
-echo "         script inspired by FTH PHONE 1902 and Venkayy"
-echo "         GNU/Linux script porting & testing by leoikt"
+echo "                Oneplus 13 - OOS Super Flasher          "
+echo "           Packaged by docnok63, Jonas Salo & Daniel    "
+echo "         script inspired by FTH PHONE 1902 and Venkayy  "
+echo "         GNU/Linux script porting and testing by LeoIKT "
 
 # Переходим в директорию скрипта
 cd "$(dirname "$0")"
@@ -30,7 +30,7 @@ if ! command -v $fastboot &> /dev/null; then
 fi
 
 device_info=$($fastboot getvar product 2>&1 | grep -oP 'product:\s*\K\w+')
-if [ "$device_info" != "PJZ110" ]; then 
+if [ "$device_info" != "sun" ]; then 
     echo "ОШИБКА: Устройство не OnePlus 13 CN (PJZ110)! Обнаружено: $device_info"
     exit 1
 fi
