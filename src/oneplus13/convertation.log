@@ -4,11 +4,11 @@
 List of devices attached
 [____sn_here_____]        unauthorized
 
-[leoikt@archlinux oneplus13]$ adb devices
+[user@archlinux oneplus13]$ adb devices
 List of devices attached
 [____sn_here_____]        device
 
-[leoikt@archlinux oneplus13]$ adb reboot bootloader
+[user@archlinux oneplus13]$ adb reboot bootloader
 [user@archlinux oneplus13]$ fastboot devices
 [____sn_here_____]         fastboot
 [user@archlinux oneplus13]$  fastboot reboot fastboot
