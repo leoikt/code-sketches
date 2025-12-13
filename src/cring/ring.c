@@ -181,7 +181,6 @@ void applyFunction(Ring* ring, void (*f)(Node*)) {
   } while (current != start);
 }
 
-/* Вспомогательная функция для примера */
 void printNode(Node* node) {
   if (node) {
     printf("%d ", node->data);
