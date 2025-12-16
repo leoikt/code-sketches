@@ -1,0 +1,24 @@
+# Объектные файлы и библиотеки
+*.o
+*.gc.o
+*.a
+*.so
+*.dylib
+
+# Исполняемые файлы
+example
+test_ring
+test_ring_cov
+
+# Покрытие кода
+*.gcda
+*.gcno
+*.gcov
+coverage/
+*.dSYM/
+
+# Прочее
+*.swp
+*.swo
+*~
+.DS_Store
