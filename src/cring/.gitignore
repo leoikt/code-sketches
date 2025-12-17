@@ -18,6 +18,7 @@ coverage/
 *.dSYM/
 
 # Прочее
+*.bak
 *.swp
 *.swo
 *~
