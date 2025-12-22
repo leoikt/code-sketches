@@ -3,14 +3,21 @@
  * 2. $ gcc -Wall -Wextra -Werror -std=c17 -o example example.c -L. -lring
  * 3. $ ./example
  */
-
 #include <stdio.h>
 
 #include "ring.h"
 
+/* Собственная функция для печати узла */
+void printElement(Node* node) {
+  if (node) {
+    printf("%d ", node->data);
+  }
+}
+
 int main() {
   Ring* ring = createRing();
 
+  // Добавляем элементы
   for (int i = 1; i <= 5; i++) {
     addElement(ring, i * 10);
   }
@@ -30,10 +37,30 @@ int main() {
   reverse(ring);
   printRing(ring);
 
-  printf("\nApplying function (print) to each element:\n");
-  applyFunction(ring, printNode);
+  printf("\nApplying function to each element:\n");
+  applyFunction(ring, printElement);  // Используем нашу функцию
   printf("\n");
 
+  // Тестируем removeEachElement
+  printf("\nAdding duplicate elements:\n");
+  addElement(ring, 20);
+  addElement(ring, 20);
+  addElement(ring, 30);
+  printRing(ring);
+
+  printf("\nRemoving all elements with value 20:\n");
+  int removed = removeEachElement(ring, 20);
+  printf("Removed %d elements\n", removed);
+  printRing(ring);
+
+  printf("\nTesting navigation:\n");
+  printf("Current: %d\n", getCurrent(ring)->data);
+  next(ring);
+  printf("After next: %d\n", getCurrent(ring)->data);
+  prev(ring);
+  printf("After prev: %d\n", getCurrent(ring)->data);
+
   destroyRing(ring);
+  printf("\nRing destroyed successfully.\n");
   return 0;
 }

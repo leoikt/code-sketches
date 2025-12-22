@@ -36,7 +36,7 @@ int isEmpty(Ring* ring);
 void rotate(Ring* ring, int steps);
 void reverse(Ring* ring);
 void printRing(Ring* ring);
+// void applyFunction(Ring* ring, void (*f)(Node*));
 void printNode(Node* node);
-void applyFunction(Ring* ring, void (*f)(Node*));
 
 #endif
