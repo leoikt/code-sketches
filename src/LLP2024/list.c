@@ -20,3 +20,17 @@ void list_add_front(struct list** old, int64_t value) {
   new->next = *old;
   *old = new;
 }
+
+// src: https://stepik.org/lesson/1443630/step/5?unit=1462431
+size_t list_length(const struct list* list) {
+  size_t len = 0;
+  struct list* pl = (struct list*)list;
+  if (list) {
+    len = 1;
+    while (pl->next) {
+      len++;
+      pl = pl->next;
+    }
+  }
+  return len;
+}
