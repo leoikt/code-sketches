@@ -43,3 +43,12 @@ void list_destroy(struct list* list) {
     list = next;
   }
 }
+
+//  src: https://stepik.org/lesson/1443630/step/7?unit=1462431
+struct list* list_last(struct list* list) {
+  if (!list) return NULL;
+
+  struct list* last = list;
+  while (last->next) last = last->next;
+  return last;
+}
