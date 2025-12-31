@@ -52,3 +52,16 @@ struct list* list_last(struct list* list) {
   while (last->next) last = last->next;
   return last;
 }
+
+// src: https://stepik.org/lesson/1443630/step/8?unit=1462431
+void list_add_back(struct list** old, int64_t value) {
+  struct list* new = node_create(value);
+  if (new) {
+    if (old && *old) {
+      struct list* last = list_last(*old);
+      last->next = new;
+    } else if (old) {
+      *old = new;
+    }
+  }
+}
