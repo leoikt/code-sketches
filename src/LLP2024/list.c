@@ -65,3 +65,15 @@ void list_add_back(struct list** old, int64_t value) {
     }
   }
 }
+
+// src: https://stepik.org/lesson/1443630/step/9?unit=1462431
+int64_t list_sum(const struct list* list) {
+  int64_t sum = 0;
+  if (!list) return sum;
+  struct list* pl = (struct list*)list;
+  do {
+    sum += pl->value;
+    pl = pl->next;
+  } while (pl);
+  return sum;
+}
