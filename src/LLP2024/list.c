@@ -77,3 +77,19 @@ int64_t list_sum(const struct list* list) {
   } while (pl);
   return sum;
 }
+
+// src: https://stepik.org/lesson/1443630/step/10?unit=1462431
+struct maybe_int64 list_at(const struct list* list, size_t idx) {
+  struct maybe_int64 res = {.valid = false};
+  if (list) {
+    struct list* pl = (struct list*)list;
+    for (size_t i = 0; i < idx; i++) {
+      pl = pl->next;
+    }
+    if (pl) {
+      res.value = pl->value;
+      res.valid = true;
+    }
+  }
+  return res;
+}
