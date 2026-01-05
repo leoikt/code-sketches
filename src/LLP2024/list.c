@@ -84,19 +84,16 @@ struct maybe_int64 list_at(const struct list* list, size_t idx) {
   if (list) {
     struct list* pl = (struct list*)list;
     for (size_t i = 0; i < idx; i++) {
+      if (pl == NULL) return res;
       pl = pl->next;
     }
-    if (pl) {
-      res.value = pl->value;
-      res.valid = true;
-    }
+    res.value = pl->value;
+    res.valid = true;
   }
   return res;
 }
 
 // src: https://stepik.org/lesson/1443630/step/11?unit=1462431
-void list_add_front(struct list** old, int64_t value);
-
 // create a flipped copy of the list
 struct list* list_reverse(const struct list* list) {
   struct list* rlist = NULL;
