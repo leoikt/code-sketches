@@ -113,3 +113,27 @@ struct maybe_int64 maybe_read_int64() {
   res.valid = scanf("%" SCNd64, &res.value);
   return res;
 }
+
+// src: https://stepik.org/lesson/1443630/step/13?unit=1462431
+struct list* node_read() {
+  struct list* l = NULL;
+  struct maybe_int64 current = maybe_read_int64();
+  if (current.valid) {
+    l = node_create(current.value);
+  }
+}
+return l;
+}
+
+struct list* list_read() {
+  struct list* res = NULL;
+  struct list** ppl = &res;
+  while (true) {
+    *ppl = node_read();
+    if (*ppl) {
+      ppl = &((*ppl)->next);
+    } else
+      break;
+  }
+  return res;
+}
