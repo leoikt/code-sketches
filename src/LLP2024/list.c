@@ -106,3 +106,10 @@ struct list* list_reverse(const struct list* list) {
   }
   return rlist;
 }
+
+// src: https://stepik.org/lesson/1443630/step/12?unit=1462431
+struct maybe_int64 maybe_read_int64() {
+  struct maybe_int64 res = {.valid = false};
+  res.valid = scanf("%" SCNd64, &res.value);
+  return res;
+}
