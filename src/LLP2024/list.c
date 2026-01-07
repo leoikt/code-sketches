@@ -110,7 +110,7 @@ struct list* list_reverse(const struct list* list) {
 // src: https://stepik.org/lesson/1443630/step/12?unit=1462431
 struct maybe_int64 maybe_read_int64() {
   struct maybe_int64 res = {.valid = false};
-  res.valid = scanf("%" SCNd64, &res.value);
+  if (scanf("%" SCNd64, &res.value) == 1) res.valid = true;
   return res;
 }
 
@@ -121,8 +121,7 @@ struct list* node_read() {
   if (current.valid) {
     l = node_create(current.value);
   }
-}
-return l;
+  return l;
 }
 
 struct list* list_read() {
