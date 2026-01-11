@@ -1,3 +1,5 @@
+// src: https://stepik.org/lesson/1443632/step/11?unit=1462433
+//
 enum move_dir { MD_UP, MD_RIGHT, MD_DOWN, MD_LEFT, MD_NONE };
 
 // Determine the type of event handler move_callback with typedef
