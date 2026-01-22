@@ -1,0 +1,10 @@
+#add to /etc/sysctl.conf
+
+# Дополнительные настройки безопасности
+kernel.yama.ptrace_scope = 2
+kernel.perf_event_paranoid = 3
+kernel.randomize_va_space = 2
+net.ipv4.tcp_timestamps = 0
+net.ipv4.icmp_echo_ignore_all = 0
+fs.protected_hardlinks = 1
+fs.protected_symlinks = 1
