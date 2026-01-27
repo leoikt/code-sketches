@@ -1,0 +1,12 @@
+# /etc/systemd/system/archupd.timer
+[Unit]
+Description=Daily Arch Update
+Requires=archupd.service
+
+[Timer]
+OnCalendar=daily
+RandomizedDelaySec=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target
