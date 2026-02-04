@@ -1,31 +1,27 @@
 static bool gt(int a, int b) { return a > b; }
 static bool lt(int a, int b) { return a < b; }
-static bool eq(int a, int b) { return a == b; }
+enum { ASC = 0, DESC = 1 };
+static bool (*f[])(int, int) = {[ASC] = gt, [DESC] = lt};
 
-static bool _map(int* nums, int sz, size_t* i, bool (*cmp)(int, int)) {
-  bool code = false;
-  while (*i < sz) {
-    if (cmp(nums[*i], nums[(*i) - 1]))
-      code = true;
-    else if (eq(nums[*i], nums[(*i) - 1])) {
-      code = false;
-      break;
-    } else {
-      break;
-    }
-    *i += 1;
+static bool _map(int* nums, int sz, size_t* i, int state) {
+  bool res = false;
+  while ((*i) < sz && f[state](nums[*i], nums[(*i) - 1])) {
+    res = true;
+    (*i)++;
   }
-  return code;
+  return res;
 }
 
 bool isTrionic(int* nums, int numsSize) {
-  bool res = false, p = 0, q = 0;
+  bool res = false;
   if (numsSize > 3) {
     size_t i = 1;
-    p = _map(nums, numsSize, &i, gt);
-    if (p) q = _map(nums, numsSize, &i, lt);
-    if (q) res = _map(nums, numsSize, &i, gt);
-    res = res && i == (size_t)numsSize;
+    bool p = _map(nums, numsSize, &i, ASC);
+    if (p) {
+      bool q = _map(nums, numsSize, &i, DESC);
+      if (q) res = _map(nums, numsSize, &i, ASC);
+      res = res && ((size_t)numsSize == i);
+    }
   }
   return res;
 }
